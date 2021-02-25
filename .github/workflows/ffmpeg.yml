@@ -1,0 +1,19 @@
+name: ffmpeg
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ffmpeg/Dockerfile
+      - .github/workflows/ffmpeg.yml
+
+jobs:
+  lint:
+    name: Dockerfile lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Hadolint
+        uses: brpaz/hadolint-action@v1.2.1
+        with:
+          dockerfile: ffmpeg/Dockerfile
