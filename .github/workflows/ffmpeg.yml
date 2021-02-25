@@ -58,7 +58,6 @@ jobs:
           docker buildx build ./ffmpeg \
             --load \
             --tag ghcr.io/bratteng/toolkit/ffmpeg:latest \
-            --tag ghcr.io/bratteng/toolkit/ffmpeg:${{ github.sha }} \
             --cache-to=type=local,dest=/tmp/.buildx-cache \
             --cache-from=type=local,src=/tmp/.buildx-cache
 
@@ -66,4 +65,3 @@ jobs:
         name: Docker push
         run: |
           docker push ghcr.io/bratteng/toolkit/ffmpeg:latest
-          docker push ghcr.io/bratteng/toolkit/ffmpeg:${{ github.sha }}
