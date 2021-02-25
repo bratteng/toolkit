@@ -8,6 +8,6 @@ updates:
 
   # Maintain dependencies for docker
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/ffmpeg"
     schedule:
       interval: "daily"
