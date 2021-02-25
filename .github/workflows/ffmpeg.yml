@@ -9,11 +9,55 @@ on:
 
 jobs:
   lint:
-    name: Dockerfile lint
+    name: Lint Dockerfile
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Hadolint
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+
+      -
+        name: Hadolint
         uses: brpaz/hadolint-action@v1.2.1
         with:
           dockerfile: ffmpeg/Dockerfile
+
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
+      -
+        name: Cache Docker layers
+        uses: actions/cache@v2.1.4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      -
+        name: Docker build
+        run: |
+          docker buildx build ./ffmpeg \
+            --load \
+            --tag ghcr.io/bratteng/toolkit/ffmpeg:latest \
+            --tag ghcr.io/bratteng/toolkit/ffmpeg:${{ github.sha }} \
+            --cache-to=type=local,dest=/tmp/.buildx-cache \
+            --cache-from=type=local,src=/tmp/.buildx-cache
