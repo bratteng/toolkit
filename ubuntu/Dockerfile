@@ -6,4 +6,7 @@ RUN apt-get update \
     curl \
     dnsutils \
     iputils-ping \
-    iproute2
+    iproute2 \
+    wget
+
+COPY --from=smallstep/step-cli:0.23.3 /usr/local/bin/step /usr/local/bin/step
