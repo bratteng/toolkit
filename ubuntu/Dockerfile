@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20230522
+FROM ubuntu:jammy-20230624
 
 RUN apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
