@@ -9,4 +9,4 @@ RUN apt-get update \
     iproute2 \
     wget
 
-COPY --from=smallstep/step-cli:0.23.3 /usr/local/bin/step /usr/local/bin/step
+COPY --from=smallstep/step-cli:0.25.0 /usr/local/bin/step /usr/local/bin/step
