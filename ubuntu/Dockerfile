@@ -10,4 +10,4 @@ RUN apt-get update \
     wget \
     btop
 
-COPY --from=smallstep/step-cli:0.25.0 /usr/local/bin/step /usr/local/bin/step
+COPY --from=smallstep/step-cli:0.25.2 /usr/local/bin/step /usr/local/bin/step
