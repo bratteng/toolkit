@@ -7,6 +7,7 @@ RUN apt-get update \
     dnsutils \
     iputils-ping \
     iproute2 \
-    wget
+    wget \
+    btop
 
 COPY --from=smallstep/step-cli:0.25.0 /usr/local/bin/step /usr/local/bin/step
