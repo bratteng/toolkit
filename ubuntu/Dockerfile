@@ -8,6 +8,7 @@ RUN apt-get update \
     iputils-ping \
     iproute2 \
     wget \
-    btop
+    btop \
+    redis-tools
 
 COPY --from=smallstep/step-cli:0.25.2 /usr/local/bin/step /usr/local/bin/step
