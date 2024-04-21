@@ -13,7 +13,8 @@ RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
         git \
         zsh \
         rsync \
-        hostname
+        hostname \
+        procps
 
 ENV XXXX=5
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
