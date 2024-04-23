@@ -14,9 +14,9 @@ RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
         zsh \
         rsync \
         hostname \
-        procps
+        procps \
+        vim
 
-ENV XXXX=5
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     set -xe \
     && git clone --depth=1 https://github.com/omBratteng/dotfiles.git /root/.dotfiles \
