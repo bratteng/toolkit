@@ -10,6 +10,21 @@
     {
       "matchDatasources": ["github-tags", "github-runners"],
       "groupName": "gh-workflows"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "groupName": "fedora",
+      "matchFileNames": ["fedora/Dockerfile"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "groupName": "ffmpeg",
+      "matchFileNames": ["ffmpeg/Dockerfile"]
+    },
+    {
+      "matchDatasources": ["docker"],
+      "groupName": "ubuntu",
+      "matchFileNames": ["ubuntu/Dockerfile"]
     }
   ]
 }
