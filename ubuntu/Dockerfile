@@ -11,4 +11,4 @@ RUN apt-get update \
     btop \
     redis-tools
 
-COPY --from=smallstep/step-cli:0.25.2 /usr/local/bin/step /usr/local/bin/step
+COPY --from=smallstep/step-cli:0.27.2 /usr/local/bin/step /usr/local/bin/step
