@@ -7,6 +7,10 @@ on:
       - ubuntu/Dockerfile
       - .github/workflows/ubuntu.yaml
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     name: Lint Dockerfile
