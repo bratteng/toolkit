@@ -8,7 +8,7 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["github-actions"],
+      "matchDatasources": ["github-tags", "github-runners"],
       "groupName": "gh-workflows"
     }
   ]
