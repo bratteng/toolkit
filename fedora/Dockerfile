@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora@sha256:548e2ea7edd34da07eb8b77262e249991558a6c1387ec007a92a5df69ce84b84
+FROM quay.io/fedora/fedora@sha256:d7ebb97fcebff77660250b7ee42c8afbe6d821428bce19775cd78122761aecef
 
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     dnf update -y \
