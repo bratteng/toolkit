@@ -1,6 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    ":dependencyDashboard",
+    ":semanticPrefixChore",
+    ":ignoreModulesAndTests",
+    ":prHourlyLimitNone"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["github-actions"],
+      "groupName": "gh-workflows"
+    }
   ]
 }
