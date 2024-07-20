@@ -1,4 +1,4 @@
-FROM ubuntu@sha256:e3f92abc0967a6c19d0dfa2d55838833e947b9d74edbcb0113e48535ad4be12a
+FROM ubuntu:noble-20240605
 
 RUN --mount=target=/var/cache/apt/archives,type=cache,sharing=locked \
     apt-get update \
