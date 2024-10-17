@@ -15,7 +15,8 @@ RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
         rsync \
         hostname \
         procps \
-        vim
+        vim \
+        duf
 
 RUN --mount=target=/var/cache/dnf,type=cache,sharing=locked \
     set -xe \
