@@ -1,4 +1,4 @@
-FROM alpine:3.20.1
+FROM alpine:3.21.2
 LABEL org.opencontainers.image.source https://github.com/bratteng/docker-toolkit
 
 WORKDIR /tmp/ffmpeg
